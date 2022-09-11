@@ -37,10 +37,10 @@ passwd
 User on the client, that's using port 9999 can connect remote http server which port is 8088 and only for localhost use.  
 
 ```shell
-| ------ |   | ---------------------------------------- |
-| Client |-> | Server(Docker)  -> localhost http server |
-| (9999) |   |     (2212)              (8088)           |
-| ------ |   | ---------------------------------------- |
+| ------ |    | --------------------------------------- |
+| Client | -> | Server(Docker) -> localhost http server |
+| (9999) |    |     (2212)              (8088)          |
+| ------ |    | --------------------------------------- |
 ``````
 
 #### Server setup
@@ -68,13 +68,13 @@ you also can connect [http://127.0.0.1:9999](http://127.0.0.1:9999) to check suc
 
 ### Case 2
 
-User on the internet, that's using port 8099 cant connect local server which port is 9900 and only for localhost use.  
+User on the internet, that's using port 8099 can connect local server which port is 9900 and only for localhost use.  
 
 ```shell
-| ------ |   | ---------------------------- |    | ---- |
-| Client | <-| ssh server <- Server(Docker) | <- | User |
-| (9900) |   |   (2212)         (8099)      |    |      |
-| ------ |   | ---------------------------- |    | ---- |
+| ------ |    | ---------------------------- |    | ---- |
+| Client | <- | ssh server <- Server(Docker) | <- | User |
+| (9900) |    |   (2212)         (8099)      |    |      |
+| ------ |    | ---------------------------- |    | ---- |
 ``````
 
 #### Client setup
