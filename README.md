@@ -111,4 +111,9 @@ ssh -R 0.0.0.0:8099:localhost:9900 -p 2212 root@localhost
 
 you also can connect [http://127.0.0.1:8099](http://127.0.0.1:8099) to check success  
 
+## Reference
 
+[SSH Tunneling (Port Forwarding) 詳解](https://johnliu55.tw/ssh-tunnel.html)  
+[如何利用SSH Tunnel來穿透遠端主機的防火牆，連接到某個服務？](https://magiclen.org/ssh-tunnel/)  
+[\[教學\] 透過 SSH Tunnel 將伺服器內部服務綁定到本機電腦](https://xenby.com/b/269-%E6%95%99%E5%AD%B8-%E9%80%8F%E9%81%8E-ssh-tunnel-%E5%B0%87%E4%BC%BA%E6%9C%8D%E5%99%A8%E5%85%A7%E9%83%A8%E6%9C%8D%E5%8B%99%E7%B6%81%E5%AE%9A%E5%88%B0%E6%9C%AC%E6%A9%9F%E9%9B%BB%E8%85%A6%E4%B8%8A)  
+[用 ssh tunnel 連線到 router 背後的機器，並建立 SOCKS5 proxy 存取內網資源](https://hackmd.io/@DailyOops/ssh-reverse-tunnel-behind-the-router-with-socks5-proxy)  
