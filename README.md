@@ -34,6 +34,8 @@ passwd
 
 ### Case 1
 
+User on the client, that's using port 9999 can connect remote http server which port is 8088 and only for localhost use.  
+
 ```shell
 | ------ |   | ---------------------------------------- |
 | Client |-> | Server(Docker)  -> localhost http server |
@@ -45,7 +47,7 @@ passwd
 #### Server setup
 
 ```shell
-python -m http.server 8088
+python3 -m http.server --bind 127.0.0.1 8088
 ```
 
 you can connect [http://127.0.0.1:8088](http://127.0.0.1:8088) to check server available  
