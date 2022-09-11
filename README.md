@@ -43,7 +43,6 @@ User on the client, that's using port 9999 can connect remote http server which 
 | ------ |   | ---------------------------------------- |
 ``````
 
-
 #### Server setup
 
 ```shell
@@ -66,3 +65,50 @@ ssh -L 9999:localhost:8088 -p 2212 root@localhost
 ```
 
 you also can connect [http://127.0.0.1:9999](http://127.0.0.1:9999) to check success  
+
+### Case 2
+
+User on the internet, that's using port 8099 cant connect local server which port is 9900 and only for localhost use.  
+
+```shell
+| ------ |   | ---------------------------- |    | ---- |
+| Client | <-| ssh server <- Server(Docker) | <- | User |
+| (9900) |   |   (2212)         (8099)      |    |      |
+| ------ |   | ---------------------------- |    | ---- |
+``````
+
+#### Client setup
+
+
+```shell
+python3 -m http.server --bind 127.0.0.1 9900
+```
+
+you can connect [http://127.0.0.1:9900](http://127.0.0.1:9900) to check server available  
+
+#### Server setup
+
+you need to open Gateway setting of sshd.  
+
+```
+# vim /etc/ssh/sshd_config
+GatewayPorts yes
+```
+
+and restart sshd  
+
+The command mean:  
+1. client url: localhost
+2. client port: 9900
+3. server outside url: 0.0.0.0
+4. server outside port: 8099
+5. server ssh port: 2212
+6. server uri: root@localhost
+
+```shell
+ssh -R 0.0.0.0:8099:localhost:9900 -p 2212 root@localhost
+```
+
+you also can connect [http://127.0.0.1:8099](http://127.0.0.1:8099) to check success  
+
+
