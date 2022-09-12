@@ -1,5 +1,20 @@
 # Port forwarding via ssh tunnel
 
+## Table of Contents
+
+- [Port forwarding via ssh tunnel](#port-forwarding-via-ssh-tunnel)
+  - [Table of Contents](#table-of-contents)
+  - [Pre-setup](#pre-setup)
+    - [SSH](#ssh)
+  - [Forwarding](#forwarding)
+    - [Case 1](#case-1)
+      - [Server setup](#server-setup)
+      - [Client setup](#client-setup)
+    - [Case 2](#case-2)
+      - [Client setup](#client-setup-1)
+      - [Server setup](#server-setup-1)
+  - [Reference](#reference)
+
 ## Pre-setup
 
 ### SSH
@@ -30,7 +45,7 @@ and you need to set password for root
 passwd
 ```
 
-## Fowarding
+## Forwarding
 
 ### Case 1
 
@@ -41,7 +56,7 @@ User on the client, that's using port 9999 can connect remote http server which 
 | Client | -> | Server(Docker) -> localhost http server |
 | (9999) |    |     (2212)              (8088)          |
 | ------ |    | --------------------------------------- |
-``````
+```
 
 #### Server setup
 
@@ -75,7 +90,7 @@ User on the internet, that's using port 8099 can connect local server which port
 | Client | <- | ssh server <- Server(Docker) | <- | User |
 | (9900) |    |   (2212)         (8099)      |    |      |
 | ------ |    | ---------------------------- |    | ---- |
-``````
+```
 
 #### Client setup
 
