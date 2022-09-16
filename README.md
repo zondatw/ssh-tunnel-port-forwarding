@@ -13,6 +13,7 @@
     - [Case 2](#case-2)
       - [Client setup](#client-setup-1)
       - [Server setup](#server-setup-1)
+      - [Command](#command)
   - [Reference](#reference)
 
 ## Pre-setup
@@ -111,6 +112,8 @@ GatewayPorts yes
 ```
 
 and restart sshd  
+
+#### Command
 
 The command mean:  
 1. client url: localhost
